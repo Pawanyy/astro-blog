@@ -1,0 +1,27 @@
+---
+import "../styles/alternate.css";
+
+// compenent imports
+import MainHead from "../layouts/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "default title", description = "default description" } =
+  Astro.props as Props;
+---
+
+<html lang="en">
+  <MainHead {title} {description} />
+  <body>
+    <Nav />
+    <main>
+      <slot>No Content to show!</slot>
+    </main>
+    <Footer />
+  </body>
+</html>

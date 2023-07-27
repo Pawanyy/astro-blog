@@ -1,0 +1,27 @@
+---
+// component imports
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+---
+
+<MainLayout title="About" description="this page is about me">
+  <section class="container about" aria-label="about me">
+    <img
+      src="/images/headshot.jpg"
+      alt="My headshot"
+      width="200"
+      height="330"
+    />
+    <div class="content">
+      <h1 class="h1">My Blog</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora
+        atque labore neque molestias asperiores dolorum tempore, dolore eaque
+        doloribus odit numquam sequi reprehenderit blanditiis? Corrupti quia
+        assumenda porro vel maxime eos, quos distinctio tempora quae sit fugit.
+        Dignissimos, eaque!
+      </p>
+      <Link href="mailto:abc@gamil.com" style="primary" text="Contact Me" />
+    </div>
+  </section>
+</MainLayout>
