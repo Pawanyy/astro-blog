@@ -1,5 +1,6 @@
 ---
 // component imports
+import { Image } from "@astrojs/image/components";
 import MainLayout from "../layouts/MainLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import Link from "../components/Link.astro";
@@ -13,11 +14,11 @@ const formattedPosts = formatBlogPosts(allPosts, { limit: 3 });
 
 <MainLayout title="My Blog" description="this my blog's home page">
   <section class="container about" aria-label="about me">
-    <img
+    <Image
       src="/images/headshot.jpg"
       alt="My headshot"
-      width="200"
-      height="330"
+      width={200}
+      height={330}
     />
     <div class="content">
       <h1 class="h1">My Blog</h1>
