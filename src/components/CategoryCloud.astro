@@ -19,8 +19,7 @@ const processedCategories = allCategories.map((category) => {
   };
 });
 
-const { showCount } = Astro.props;
-console.log(processedCategories);
+const { showCount = false } = Astro.props;
 ---
 
 <ul class="categories">
