@@ -1,0 +1,37 @@
+---
+import { formatBlogPosts, slugify } from "../js/utils";
+const allPosts = await Astro.glob("../pages/blog/*.md");
+
+const formattedPosts = formatBlogPosts(allPosts);
+const allCategories = [
+  ...new Set(
+    formattedPosts.map((post: any) => post.frontmatter.category.toLowerCase())
+  ),
+];
+
+const processedCategories = allCategories.map((category) => {
+  const posts = formattedPosts.filter(
+    (post: any) => post.frontmatter.category.toLowerCase() === category
+  );
+  return {
+    category: category,
+    total: posts.length,
+  };
+});
+
+const { showCount } = Astro.props;
+console.log(processedCategories);
+---
+
+<ul class="categories">
+  {
+    processedCategories.map((category) => (
+      <li>
+        <a class="badge" href={`/category/${slugify(category.category)}`}>
+          {category.category}
+          {showCount && <span class="pill">{category.total}</span>}
+        </a>
+      </li>
+    ))
+  }
+</ul>

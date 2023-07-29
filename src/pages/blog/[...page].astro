@@ -15,8 +15,6 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 const formattedPosts = formatBlogPosts(page.data);
-
-console.log(page);
 ---
 
 <MainLayout title="My Blog">
@@ -33,6 +31,6 @@ console.log(page);
         ))
       }
     </div>
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next}/>
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
 </MainLayout>
