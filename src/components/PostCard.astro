@@ -32,7 +32,7 @@ const { title, category, author, date, image, description } = frontmatter;
       <Tag class="h2">
         <a href={url}>{title}</a>
       </Tag>
-      <p>by <a href={`\author/${slugify(author)}/`}>{author}</a></p>
+      <p>by <a href={`/author/${slugify(author)}/`}>{author}</a></p>
       <time>{fromatDate(date)}</time>
     </div>
     <p>{description}</p>
